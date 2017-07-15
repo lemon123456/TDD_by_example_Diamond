@@ -38,13 +38,12 @@ public class Diamond {
     }
 
     private List<String> getSequence(String letter) {
-        if (letter.equals("A")) {
-            return Arrays.asList("A");
-        } else if (letter.equals("B")) {
-            return Arrays.asList("A", "B", "A");
-        } else {
-            return Arrays.asList("A", "B", "C", "B", "A");
+        StringBuilder stringBuilder = new StringBuilder();
+        for (char c = 'A'; c < letter.charAt(0); c++) {
+            stringBuilder.append(c);
         }
+        String result = stringBuilder.toString() + letter + stringBuilder.reverse().toString();
+        return Arrays.asList(result.split(""));
     }
 
 
