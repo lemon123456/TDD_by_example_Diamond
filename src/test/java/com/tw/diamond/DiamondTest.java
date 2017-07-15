@@ -8,7 +8,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class DiamondTest {
-    private final Diamond diamond = new Diamond();
+    private final Diamond diamond = new Diamond(new GenerateLine(' '));
 
     @Test
     public void print_diamong_for_A() throws Exception {
@@ -30,6 +30,17 @@ public class DiamondTest {
                                    " B B ",
                                    "C   C",
                                    " B B ",
+                                   "  A  "), diamond.diamond("C"));
+
+    }
+
+    @Test
+    public void print_super_diamong_for_C() throws Exception {
+        Diamond diamond = new Diamond(new GenerateLine('*'));
+        assertEquals(Arrays.asList("  A  ",
+                                   " B*B ",
+                                   "C***C",
+                                   " B*B ",
                                    "  A  "), diamond.diamond("C"));
 
     }

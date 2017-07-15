@@ -4,14 +4,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Diamond {
-    public Diamond() {
+class Diamond {
+
+    private GenerateLine generateLine;
+
+    public Diamond(GenerateLine generateLine) {
+        this.generateLine = generateLine;
     }
 
     List<String> diamond(String letter) {
         ArrayList<String> lines = new ArrayList<String>();
         for (String lineLetter : getSequence(letter)) {
-            lines.add(GenerateLine.generateLine(letter, lineLetter));
+            lines.add(generateLine.generateLine(letter, lineLetter));
         }
         return lines;
     }

@@ -5,9 +5,12 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class GenerateLineTest {
+
+    private GenerateLine generateLine = new GenerateLine(' ');
+
     @Test
     public void generate_line_for_letter_A_and_lineletter_A() throws Exception {
-        assertEquals("A", GenerateLine.generateLine("A", "A"));
+        assertEquals("A", generateLine.generateLine("A", "A"));
     }
 
     @Test
