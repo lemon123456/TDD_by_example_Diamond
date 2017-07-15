@@ -11,30 +11,9 @@ public class Diamond {
     List<String> diamond(String letter) {
         ArrayList<String> lines = new ArrayList<String>();
         for (String lineLetter : getSequence(letter)) {
-            lines.add(generateLine(letter, lineLetter));
+            lines.add(GenerateLine.generateLine(letter, lineLetter));
         }
-
         return lines;
-    }
-
-    private String generateLine(String letter, String lineLetter) {
-        if (letter.equals("A")) {
-            return "A";
-        } else if (letter.equals("B")) {
-            if (lineLetter.equals("A")) {
-                return " A ";
-            } else {
-                return "B B";
-            }
-        } else {
-            if (lineLetter.equals("A")) {
-                return "  A  ";
-            } else if (lineLetter.equals("B")) {
-                return " B B ";
-            } else {
-                return "C   C";
-            }
-        }
     }
 
     private List<String> getSequence(String letter) {
